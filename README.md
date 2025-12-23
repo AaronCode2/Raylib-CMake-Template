@@ -6,7 +6,7 @@
 2. Run the following command in your terminal:
 
 ```
-git clone https://github.com/AaronCode2/Tiny-Wonder.git
+git clone https://github.com/AaronCode2/Raylib-CMake-Template.git
 ```
 
 ### The Zipper Way

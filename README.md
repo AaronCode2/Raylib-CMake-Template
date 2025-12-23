@@ -12,7 +12,7 @@ git clone https://github.com/AaronCode2/Tiny-Wonder.git
 ### The Zipper Way
 
 1. Hopefully you know how to install stuff from your browser  
-2. Click on this [link](https://github.com/AaronCode2/Tiny-Wonder/archive/refs/heads/main.zip) to download  
+2. Click on this [link](https://github.com/AaronCode2/Raylib-CMake-Template.git) to download  
 3. Once downloaded, go to the directory you installed the project.
 4. Then right click and Extract it.
 5. Place the extracted version of the project in the directory you want.  

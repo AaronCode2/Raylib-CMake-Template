@@ -27,7 +27,7 @@ target_link_libraries(Aaron raylib)
 
 if(WIN32)
 
-    target_sources(Tiny_Wonder PRIVATE Windows/app.rc)
+    target_sources(Aaron PRIVATE Windows/app.rc)
     target_link_options(Aaron PRIVATE $<$<CONFIG:Release>:-mwindows>)
 elseif(APPLE)
 

@@ -4,7 +4,7 @@
         "name": "Program",
         "type": "cppdbg",
         "request": "launch",
-        "program": "${workspaceFolder}/build/Aaron.exe", // Set the right
+        "program": "${workspaceFolder}/build/Aaron.exe",
         "args": [],
         "stopAtEntry": false,
         "preLaunchTask": "Cmake",
@@ -12,7 +12,8 @@
         "environment": [],
         "externalConsole": true,
         "MIMode": "gdb",
-        "miDebuggerPath": "C:/msys64/ucrt64/bin/gdb.exe", // Set your path to gdb
+        //! Set your path to gdb
+        "miDebuggerPath": "C:/msys64/ucrt64/bin/gdb.exe",
         "setupCommands": [
             {
                 "description": "Enable pretty-printing for gdb",

@@ -1,10 +1,10 @@
 #include "App.hpp"
 
+// I love Programing! Yeah 
+
 void App::launch() {
 
     setup();
-
-    Textures::loadTextures();
 
     Game game;
     game.run();
@@ -26,6 +26,8 @@ void App::setup() {
     InitAudioDevice();
     
     UnloadImage(favicon);
+
+    Textures::loadTextures();
 }
 
 void App::logInfo() {

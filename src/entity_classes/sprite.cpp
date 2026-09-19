@@ -1,20 +1,12 @@
 #include "Sprite.hpp"
 
-Texture2D Sprite::image;
-
-Sprite::Sprite(Rectangle object, Vector2 frame) {
+Sprite::Sprite(Rectangle object, Vector2 frame, ImageIndex index) {
 
     this->object = object;
     this->frame = frame;
-    
-    if(image.id == 0) {
 
-        Sprite::image = LoadTexture("../Assets/Items/coin.png");
-        image = Sprite::image;
-    }
-
-    srcRect.width = image.width / frame.x;
-    srcRect.height = image.height / frame.y;
+    srcRect.width = Textures::texture[index].GetFrameSize().x;
+    srcRect.height = Textures::texture[index].GetFrameSize().y;
     srcRect.y = 0;
 }
 

@@ -32,6 +32,7 @@ SOURCE_FILES
     src/entity_classes/sprite.cpp
     src/utility/utils.cpp
     src/utility/global_vars.cpp
+    src/utility/textures.cpp
 )
 
 add_executable(Aaron ${SOURCE_FILES})

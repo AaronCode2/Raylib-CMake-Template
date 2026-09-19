@@ -2,6 +2,8 @@
 #include <iostream>
 #include <raylib.h>
 #include "utility/global_vars.hpp"
+#include "entity_classes/sprite.hpp"
+#include "utility/textures.hpp"
 
 class Game {
 
@@ -14,7 +16,9 @@ class Game {
 
     private:
 
-        Color backgroundColor = {130, 235, 207, 255};
+        Color backgroundColor = {100, 100, 100, 155};
+
+        Sprite sprite = Sprite({100, 100, 100, 100}, {1, 1}, ImageIndex::PLAYER);
 
         void gameLoop();
         void updateGame();

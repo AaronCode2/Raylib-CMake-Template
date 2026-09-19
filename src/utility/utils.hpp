@@ -75,3 +75,13 @@ namespace Mouse {
     bool isClickedOnceR(const Rectangle object);
     bool isClickedOnceL(const Rectangle object);
 }
+
+// constants
+
+#define MAX_AMOUNT_OF_IMAGES 2
+
+#define IMAGE_PLAYER_PATH "../assets/icon/favicon.png"
+#define IMAGE_PLAYER_MAX_FRAMES (Vector2) {1, 1}
+
+#define IMAGE_TILE_PATH "NULL"
+#define IMAGE_TILE_MAX_FRAMES (Vector2) {1, 1}

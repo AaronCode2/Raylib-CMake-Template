@@ -2,6 +2,7 @@
 #include <raylib.h>
 #include <iostream>
 #include "game.hpp"
+#include "utility/textures.hpp"
 
 // Using ENG-US for stuff
 // Use snake_case for files and camelCase for general stuff

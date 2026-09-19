@@ -38,6 +38,8 @@ void Game::gameLoop() {
 void Game::updateGame() {
 
     handleFps();
+
+    sprite.update();
 }
 
 void Game::handleFps() {

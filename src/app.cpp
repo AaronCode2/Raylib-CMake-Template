@@ -4,6 +4,8 @@ void App::launch() {
 
     setup();
 
+    Textures::loadTextures();
+
     Game game;
     game.run();
 }

@@ -13,8 +13,15 @@ FetchContent_Declare(
     FIND_PACKAGE_ARGS ${RAYLIB_VERSION} EXACT
 )
 
+FetchContent_Declare(
+    
+    raylib_nuklear
+    URL https://github.com/RobLoach/raylib-nuklear/archive/refs/tags/v5.5.1.zip
+)
+
 set(BUILD_EXAMPLES OFF CACHE INTERNAL "")
-FetchContent_MakeAvailable(raylib)
+
+FetchContent_MakeAvailable(raylib raylib_nuklear)
 
 set(
 SOURCE_FILES
@@ -23,7 +30,8 @@ SOURCE_FILES
 )
 
 add_executable(Aaron ${SOURCE_FILES})
-target_link_libraries(Aaron raylib)
+target_link_libraries(Aaron raylib raylib_nuklear)
+# target_include_directories(Aaron PRIVATE ${raygui_SOURCE_DIR}/src)
 
 if(WIN32)
 
@@ -35,7 +43,6 @@ elseif(APPLE)
 endif()
 
 target_compile_definitions(Aaron PUBLIC $<$<CONFIG:Debug>:DEBUG_ENABLED>)
-target_link_libraries(Aaron raylib)
 
 message("Operation Complete! Configured Correctly!")
 

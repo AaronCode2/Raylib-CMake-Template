@@ -15,13 +15,13 @@ BEGIN
         BLOCK "040904E4"
         BEGIN
             VALUE "CompanyName",      "MessyGear Studios"
-            VALUE "FileDescription",  "Aaron"
+            VALUE "FileDescription",  "Aaron x64bit Windows"
             VALUE "FileVersion",      "1.0.0"
             VALUE "InternalName",     "Aaron"
             VALUE "OriginalFilename", "Aaron.exe"
             VALUE "ProductName",      "Aaron"
             VALUE "ProductVersion",   "1.0.0"
-            VALUE "LegalCopyright",   "N/A"
+            VALUE "LegalCopyright",   "CC0 (Free To Copy)"
         END
     END
 

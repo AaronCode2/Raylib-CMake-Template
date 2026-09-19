@@ -27,6 +27,11 @@ set(
 SOURCE_FILES
 
     src/main.cpp
+    src/app.cpp
+    src/game.cpp
+    src/entity_classes/sprite.cpp
+    src/utility/utils.cpp
+    src/utility/global_vars.cpp
 )
 
 add_executable(Aaron ${SOURCE_FILES})
@@ -34,7 +39,7 @@ target_link_libraries(Aaron raylib raylib_nuklear nlohmann_json::nlohmann_json)
 
 if(WIN32)
 
-    target_sources(Aaron PRIVATE Windows/app.rc)
+    target_sources(Aaron PRIVATE windows/app.rc)
     target_link_options(Aaron PRIVATE $<$<CONFIG:Release>:-mwindows>)
 elseif(APPLE)
 

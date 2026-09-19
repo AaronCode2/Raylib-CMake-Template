@@ -4,24 +4,24 @@ project(Aaron)
 
 include(FetchContent)
 
-set(RAYLIB_VERSION 5.5)
-
 FetchContent_Declare(
-    
     raylib
-    URL https://github.com/raysan5/raylib/archive/refs/tags/${RAYLIB_VERSION}.tar.gz
-    FIND_PACKAGE_ARGS ${RAYLIB_VERSION} EXACT
+    URL https://github.com/raysan5/raylib/archive/refs/tags/6.0.zip
 )
 
 FetchContent_Declare(
-    
     raylib_nuklear
-    URL https://github.com/RobLoach/raylib-nuklear/archive/refs/tags/v5.5.1.zip
+    URL https://github.com/RobLoach/raylib-nuklear/archive/refs/tags/v6.0.1.zip
+)
+
+FetchContent_Declare(
+    json
+    URL https://github.com/nlohmann/json/archive/refs/tags/v3.12.0.zip
 )
 
 set(BUILD_EXAMPLES OFF CACHE INTERNAL "")
 
-FetchContent_MakeAvailable(raylib raylib_nuklear)
+FetchContent_MakeAvailable(raylib raylib_nuklear json)
 
 set(
 SOURCE_FILES
@@ -30,8 +30,7 @@ SOURCE_FILES
 )
 
 add_executable(Aaron ${SOURCE_FILES})
-target_link_libraries(Aaron raylib raylib_nuklear)
-# target_include_directories(Aaron PRIVATE ${raygui_SOURCE_DIR}/src)
+target_link_libraries(Aaron raylib raylib_nuklear nlohmann_json::nlohmann_json)
 
 if(WIN32)
 

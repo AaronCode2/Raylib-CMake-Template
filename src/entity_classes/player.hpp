@@ -30,10 +30,15 @@ class Player : public Sprite {
         void collisionX();
         void collisionY();
 
+        void moveCameraX();
+        void moveCameraY();
+        void updateCamera();
+
         Dir direction = Dir::RIGHT;
         PlayerAnimState state = PlayerAnimState::IDLE;
 
         std::vector<Tile> &tiles;
 
+        Rectangle cameraBox;
         Rectangle hitBox;
 };

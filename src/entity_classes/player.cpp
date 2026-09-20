@@ -180,3 +180,25 @@ void Player::collisionY() {
         }
     }
 }
+
+void Player::moveCameraX() {
+
+}
+
+void Player::moveCameraY() {
+    
+}
+
+void Player::updateCamera()
+{
+
+    cameraBox = {
+
+        CAMERA_BOX_ADJ.x,
+        CAMERA_BOX_ADJ.y,
+        GetScreenWidth() - CAMERA_BOX_ADJ.width,
+        GetScreenHeight() - CAMERA_BOX_ADJ.height,
+    };
+
+    Utils::debugRect(cameraBox);
+}

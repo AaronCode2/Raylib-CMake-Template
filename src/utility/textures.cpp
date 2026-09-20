@@ -16,3 +16,9 @@ void Textures::loadTextures() {
         IMAGE_TILE_MAX_FRAMES
     };
 }
+
+void Textures::unloadTextures() {
+
+    UnloadTexture(texture[ImageIndex::PLAYER].texture);
+    UnloadTexture(texture[ImageIndex::TILE].texture);
+}

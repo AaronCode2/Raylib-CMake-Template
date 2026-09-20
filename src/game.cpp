@@ -14,7 +14,7 @@ Game::Game() {
 Game::~Game() {
 
 #if !__linux__
-
+    Textures::unloadTextures();
 #endif
 }
 

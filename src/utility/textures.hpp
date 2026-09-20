@@ -25,4 +25,6 @@ namespace Textures {
     extern std::map<ImageIndex, TextureData> texture;
 
     void loadTextures();
+
+    void unloadTextures();
 }

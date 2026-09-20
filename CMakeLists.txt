@@ -30,6 +30,7 @@ SOURCE_FILES
     src/app.cpp
     src/game.cpp
     src/entity_classes/sprite.cpp
+    src/entity_classes/player.cpp
     src/utility/utils.cpp
     src/utility/global_vars.cpp
     src/utility/textures.cpp

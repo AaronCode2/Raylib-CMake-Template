@@ -20,10 +20,9 @@
 
 struct Input {
 
-    bool up;
-    bool down;
-    bool left;
-    bool right;
+    bool goingLeft;
+    bool goingRight;
+    bool isJumping;
 };
 
 Input getInput();
@@ -34,6 +33,18 @@ enum class FPS_TYPE {
    SIXTY_FPS,
    HUNDRED_AND_TWENTY_FPS,
    MAXFPS
+};
+
+enum class Dir {
+
+    LEFT = 0,
+    RIGHT
+};
+
+enum class PlayerAnimState {
+
+    IDLE = 0,
+    WALK
 };
 
 namespace Utils {
@@ -80,8 +91,17 @@ namespace Mouse {
 
 #define MAX_AMOUNT_OF_IMAGES 2
 
-#define IMAGE_PLAYER_PATH "../assets/icon/favicon.png"
-#define IMAGE_PLAYER_MAX_FRAMES (Vector2) {1, 1}
+#define IMAGE_PLAYER_PATH "../assets/player/player.png"
+#define IMAGE_PLAYER_MAX_FRAMES (Vector2) {8, 2}
 
 #define IMAGE_TILE_PATH "NULL"
 #define IMAGE_TILE_MAX_FRAMES (Vector2) {1, 1}
+
+#define PLAYER_IDLE_FRAME_DURATION 0.1f
+#define PLAYER_IDLE_MAX_FRAMES 5
+
+#define PLAYER_WALK_FRAME_DURATION 0.09f
+#define PLAYER_WALK_MAX_FRAMES 8
+
+#define PLAYER_SPEED 20000
+#define GRAVITY 2000

@@ -1,9 +1,8 @@
 #include "Sprite.hpp"
 
-Sprite::Sprite(Rectangle object, Vector2 frame, ImageIndex index) {
+Sprite::Sprite(Rectangle object, ImageIndex index) {
 
     this->object = object;
-    this->frame = frame;
 
     srcRect.width = Textures::texture[index].GetFrameSize().x;
     srcRect.height = Textures::texture[index].GetFrameSize().y;
@@ -14,7 +13,7 @@ void Sprite::update() {
     
     srcRect.x = srcRect.width * currentFrame;
 
-    animate(frame.x);
+    animate();
     draw();
 }
 
@@ -27,7 +26,7 @@ void Sprite::draw(Texture2D image) {
     );
 }
 
-void Sprite::animate(const int frameEnd, const int frameStart, const float frameDuration) {
+void Sprite::animate(const int frameEnd, const float frameDuration, int frameStart) {
 
     elapsedFrame += GetFrameTime();
 

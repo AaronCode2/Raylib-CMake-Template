@@ -39,7 +39,7 @@ void Game::updateGame() {
 
     handleFps();
 
-    sprite.update();
+    player.update();
 }
 
 void Game::handleFps() {

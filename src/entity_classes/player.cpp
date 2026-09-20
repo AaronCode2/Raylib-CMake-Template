@@ -83,6 +83,9 @@ void Player::addressInput() {
         velocity.x = -PLAYER_SPEED * GetFrameTime();
     if(getInput().goingRight)
         velocity.x = PLAYER_SPEED * GetFrameTime();
+
+    if(getInput().isJumping)
+        velocity.y = PLAYER_JUMP_SPEED * GetFrameTime();
 }
 
 void Player::handleDirection() {

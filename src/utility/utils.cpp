@@ -6,7 +6,7 @@ Input getInput() {
 
         (IsKeyDown(KEY_A) || IsKeyDown(KEY_LEFT)),
         (IsKeyDown(KEY_D) || IsKeyDown(KEY_RIGHT)),
-        (IsKeyDown(KEY_W) || IsKeyDown(KEY_UP) || IsKeyDown(KEY_SPACE))
+        (IsKeyPressed(KEY_W) || IsKeyPressed(KEY_UP) || IsKeyPressed(KEY_SPACE))
     };
 }
 

@@ -104,4 +104,5 @@ namespace Mouse {
 #define PLAYER_WALK_MAX_FRAMES 8
 
 #define PLAYER_SPEED 20000
+#define PLAYER_JUMP_SPEED -60000
 #define GRAVITY 2000

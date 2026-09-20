@@ -27,6 +27,8 @@ void Player::draw() {
         {object.x, object.y},
         WHITE
     );
+
+    updateCamera();
 }
 
 void Player::move() {
@@ -186,7 +188,7 @@ void Player::moveCameraX() {
 }
 
 void Player::moveCameraY() {
-    
+
 }
 
 void Player::updateCamera()

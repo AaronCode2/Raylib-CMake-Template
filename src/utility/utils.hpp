@@ -127,6 +127,8 @@ namespace Mouse {
 #define TILE_WALL_HITBOX_ADJ (Rectangle) {0, 188, 0, -190}
 #define PLAYER_HITBOX_ADJ (Rectangle) {15, 10, -57, 0}
 #define COL_ADJUST 0.1f
-#define CAMERA_BOX_ADJ (Rectangle) {0, 0, 0, 0}
+#define CAMERA_BOX_ADJ (Rectangle) {170, 268, 400, 400}
 
-#define FONT_SIZE_FOR_NUK 30
+#if DEBUG_ENABLED
+    #define FONT_SIZE_FOR_NUK 20
+#endif

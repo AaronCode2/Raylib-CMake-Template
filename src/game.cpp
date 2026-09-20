@@ -28,15 +28,15 @@ void Game::updateNK() {
             nk_layout_row_static(nk, 50, 150, 1);
 
             nk_label(nk, "RECT", NK_TEXT_LEFT);
-            Utils::THE_DEBUG_RECT.x = nk_slide_float(nk, 0, Utils::THE_DEBUG_RECT.x, 400.0f, 1.0f);
-            Utils::THE_DEBUG_RECT.y = nk_slide_float(nk, 0, Utils::THE_DEBUG_RECT.y, 400.0f, 1.0f);
-            Utils::THE_DEBUG_RECT.width = nk_slide_float(nk, 0, Utils::THE_DEBUG_RECT.width, 400.0f, 1.0f);
+            Utils::THE_DEBUG_RECT.x = nk_slide_float(nk, -400, Utils::THE_DEBUG_RECT.x, 400.0f, 1.0f);
+            Utils::THE_DEBUG_RECT.y = nk_slide_float(nk, -400, Utils::THE_DEBUG_RECT.y, 400.0f, 1.0f);
+            Utils::THE_DEBUG_RECT.width = nk_slide_float(nk, -400, Utils::THE_DEBUG_RECT.width, 400.0f, 1.0f);
             Utils::THE_DEBUG_RECT.height = nk_slide_float(nk, 0, Utils::THE_DEBUG_RECT.height, 400.0f, 1.0f);
             
 
             nk_label(nk, "VECTOR", NK_TEXT_LEFT);
-            Utils::THE_DEBUG_VECTOR.x = nk_slide_float(nk, 0, Utils::THE_DEBUG_VECTOR.x, 400.0f, 1.0f);
-            Utils::THE_DEBUG_VECTOR.y = nk_slide_float(nk, 0, Utils::THE_DEBUG_VECTOR.y, 400.0f, 1.0f);
+            Utils::THE_DEBUG_VECTOR.x = nk_slide_float(nk, -400, Utils::THE_DEBUG_VECTOR.x, 400.0f, 1.0f);
+            Utils::THE_DEBUG_VECTOR.y = nk_slide_float(nk, -400, Utils::THE_DEBUG_VECTOR.y, 400.0f, 1.0f);
         }
     nk_end(nk);
 }

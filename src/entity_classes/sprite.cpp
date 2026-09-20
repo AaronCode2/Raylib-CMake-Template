@@ -7,6 +7,7 @@ Sprite::Sprite(Rectangle object, ImageIndex index) {
     srcRect.width = Textures::texture[index].GetFrameSize().x;
     srcRect.height = Textures::texture[index].GetFrameSize().y;
     srcRect.y = 0;
+    srcRect.x = 0;
 }
 
 void Sprite::update() {

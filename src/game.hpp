@@ -5,6 +5,7 @@
 #include "entity_classes/sprite.hpp"
 #include "entity_classes/player.hpp"
 #include "utility/textures.hpp"
+#include "manager_classes/world.hpp"
 
 class Game {
 
@@ -20,6 +21,7 @@ class Game {
         Color backgroundColor = {100, 100, 100, 155};
 
         Player player = Player({100, 100, 100, 100});
+        World world = World();
 
         void gameLoop();
         void updateGame();

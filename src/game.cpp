@@ -39,6 +39,7 @@ void Game::updateGame() {
 
     handleFps();
 
+    world.update();
     player.update();
 }
 

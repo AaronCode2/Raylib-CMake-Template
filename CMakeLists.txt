@@ -31,6 +31,8 @@ SOURCE_FILES
     src/game.cpp
     src/entity_classes/sprite.cpp
     src/entity_classes/player.cpp
+    src/entity_classes/tile.cpp
+    src/manager_classes/world.cpp
     src/utility/utils.cpp
     src/utility/global_vars.cpp
     src/utility/textures.cpp

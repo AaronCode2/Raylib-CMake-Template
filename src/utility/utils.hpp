@@ -47,6 +47,14 @@ enum class PlayerAnimState {
     WALK
 };
 
+enum class TileType {
+
+    WALL = 0,
+    CLOCK,
+    COUCH,
+    STAND
+};
+
 namespace Utils {
 
     extern float deltaTimeIt;
@@ -94,8 +102,8 @@ namespace Mouse {
 #define IMAGE_PLAYER_PATH "../assets/player/player.png"
 #define IMAGE_PLAYER_MAX_FRAMES (Vector2) {8, 2}
 
-#define IMAGE_TILE_PATH "NULL"
-#define IMAGE_TILE_MAX_FRAMES (Vector2) {1, 1}
+#define IMAGE_TILE_PATH "../assets/tiles/tile.png"
+#define IMAGE_TILE_MAX_FRAMES (Vector2) {4, 1}
 
 #define PLAYER_IDLE_FRAME_DURATION 0.1f
 #define PLAYER_IDLE_MAX_FRAMES 5

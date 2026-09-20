@@ -2,7 +2,6 @@
 
 World::World() {
 
-    tiles.push_back(Tile({100, 100}, TileType::WALL));
 }
 
 void World::update() {
@@ -19,7 +18,45 @@ void World::update() {
 #endif
 }
 
+std::vector<Tile> &World::giveTiles() {
+
+    return tiles;
+}
+
 void World::dev_tilePlacer() {
 
-    // stuff
+    if(GetMouseDelta().x != 0 || GetMouseDelta().y != 0) {
+
+        for(float x = 0; x < tileSize.x * 200; x += tileSize.x) {
+            for(float y = 0; y < tileSize.y * 200; y += tileSize.y) {
+
+                if(CheckCollisionPointRec(GetMousePosition(), {x, y, tileSize.x, tileSize.y})) {
+                    tilePlacerRect = {x, y, tileSize.x, tileSize.y};
+                    break;
+                }
+            }
+        }
+    }
+
+    if(IsMouseButtonDown(MOUSE_BUTTON_LEFT)) {
+
+        for(auto &tile : tiles) {
+
+            if(CheckCollisionPointRec(GetMousePosition(), tile.getObject()))
+                return;
+        }
+
+        tiles.push_back(Tile({tilePlacerRect.x, tilePlacerRect.y}, pickedTile));
+    } else if(IsMouseButtonDown(MOUSE_BUTTON_RIGHT)) {
+
+        for(auto it = tiles.begin(); it < tiles.end(); it++) {
+
+            if(CheckCollisionPointRec(GetMousePosition(), it->getObject())) {
+                it = tiles.erase(it);
+                return;
+            }
+        }
+    }
+
+    Utils::debugRect(tilePlacerRect);
 }

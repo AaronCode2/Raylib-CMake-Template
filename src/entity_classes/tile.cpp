@@ -16,6 +16,7 @@ Tile::Tile(Vector2 position, TileType type):
 void Tile::update() {
 
     draw();
+    updateHitBox();
 }
 
 void Tile::draw() {
@@ -25,4 +26,19 @@ void Tile::draw() {
         srcRect, {object.x, object.y},
         WHITE
     );
+}
+
+void Tile::updateHitBox() {
+
+    if(type == TileType::WALL) {
+
+        hitBox = {
+            object.x + TILE_WALL_HITBOX_ADJ.x,
+            object.y + TILE_WALL_HITBOX_ADJ.y,
+            object.width + TILE_WALL_HITBOX_ADJ.width,
+            object.height + TILE_WALL_HITBOX_ADJ.height,
+        };
+    }
+
+    Utils::debugRect(hitBox);
 }

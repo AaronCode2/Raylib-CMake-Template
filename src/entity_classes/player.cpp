@@ -1,7 +1,7 @@
 #include "player.hpp"
 
-Player::Player(Rectangle object):
-    Sprite(object, ImageIndex::PLAYER)     
+Player::Player(Rectangle object, std::vector<Tile> &tiles):
+    Sprite(object, ImageIndex::PLAYER), tiles(tiles)     
 {
 
     object.width = srcRect.width;
@@ -31,9 +31,12 @@ void Player::draw() {
 
 void Player::move() {
 
+    
     object.x += velocity.x * GetFrameTime();
-    object.y += velocity.y * GetFrameTime();
+    collisionX();
 
+    object.y += velocity.y * GetFrameTime();
+    collisionY();
 }
 
 void Player::handleAnimation() {
@@ -107,4 +110,73 @@ void Player::applyGravity() {
         velocity.y += GRAVITY * GetFrameTime();
     else
         velocity.y = 0;
+}
+
+void Player::updateHitBox() {
+
+    hitBox = {
+
+        object.x + PLAYER_HITBOX_ADJ.x,
+        object.y + PLAYER_HITBOX_ADJ.y,
+        object.width + PLAYER_HITBOX_ADJ.width,
+        object.height + PLAYER_HITBOX_ADJ.height,   
+    };
+
+    Utils::debugRect(hitBox);
+}
+
+void Player::collisionX() {
+
+    updateHitBox();
+
+    for(auto &tile : tiles) {
+
+        if(CheckCollisionRecs(hitBox, tile.getHitBox())) {
+            
+            if(velocity.x > 0) {
+                
+                const float offset = hitBox.x - object.x + hitBox.width;
+                
+                object.x = tile.getHitBox().x - offset - COL_ADJUST;
+            }
+            
+            if(velocity.x < 0) {
+                
+                const float offset = hitBox.x - object.x;
+                
+                object.x = tile.getHitBox().x + tile.getHitBox().width - offset + COL_ADJUST;
+            }
+
+            velocity.x = 0;
+        }
+    }
+}
+
+void Player::collisionY() {
+
+    updateHitBox();
+
+    for(auto &tile : tiles) {
+
+        if(CheckCollisionRecs(hitBox, tile.getHitBox())) {
+
+            if(velocity.y > 0) {
+                
+                velocity.y = 0;
+                
+                const float offset = hitBox.y - object.y + hitBox.height;
+                
+                object.y = tile.getHitBox().y - offset - COL_ADJUST;
+            }
+
+            if(velocity.y < 0) {
+
+                velocity.y = 0;
+
+                const float offset = hitBox.y - object.y;
+
+                object.y = tile.getHitBox().y + tile.getHitBox().height - offset + COL_ADJUST;
+            }
+        }
+    }
 }

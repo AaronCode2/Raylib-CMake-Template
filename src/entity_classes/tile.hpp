@@ -12,9 +12,13 @@ class Tile : public Sprite {
 
         void update();
 
+        Rectangle getHitBox() const { return hitBox; };
+
     private:
 
         void draw();
+        void updateHitBox();
 
         TileType type;
+        Rectangle hitBox;
 };

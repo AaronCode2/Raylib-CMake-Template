@@ -185,6 +185,11 @@ Rectangle Utils::getScreenRect() {
     return {0, 0, (float) GetScreenWidth(), (float) GetScreenHeight()};
 }
 
+void Utils::debugRect(Rectangle object) {
+
+    DrawRectangleRec(object, {255, 0, 0, 100});
+}
+
 bool Mouse::isHovering(const Rectangle object) {
 
     return CheckCollisionPointRec(GetMousePosition(), object);

@@ -70,6 +70,8 @@ namespace Utils {
     
     void collisionActionX(Rectangle &aObject, const Rectangle ahitBox, const Rectangle bHitBox, Vector2 &aVelocity, bool resetVelocity = true);
     void collisionActionY(Rectangle &aObject, const Rectangle ahitBox, const Rectangle bHitBox, Vector2 &aVelocity, bool resetVelocity = true);
+    
+    void debugRect(Rectangle object);
 
     void exitApp(const std::string errorInfo);
 
@@ -114,3 +116,9 @@ namespace Mouse {
 #define PLAYER_SPEED 20000
 #define PLAYER_JUMP_SPEED -60000
 #define GRAVITY 2000
+
+// 43, 100
+
+#define TILE_WALL_HITBOX_ADJ (Rectangle) {0, 188, 0, -190}
+#define PLAYER_HITBOX_ADJ (Rectangle) {15, 10, -57, 0}
+#define COL_ADJUST 0.1f

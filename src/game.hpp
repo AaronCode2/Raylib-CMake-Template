@@ -20,8 +20,8 @@ class Game {
 
         Color backgroundColor = {100, 100, 100, 155};
 
-        Player player = Player({100, 100, 100, 100});
         World world = World();
+        Player player = Player({100, 100, 100, 100}, world.giveTiles());
 
         void gameLoop();
         void updateGame();

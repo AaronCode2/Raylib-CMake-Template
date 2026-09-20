@@ -77,6 +77,11 @@ namespace Utils {
 
     extern Font font;
 
+    // Did this for emphasis
+
+    extern Rectangle THE_DEBUG_RECT;
+    extern Vector2 THE_DEBUG_VECTOR;
+
 #if DEBUG_ENABLED
 
     extern float xdebugingvalue;
@@ -123,3 +128,5 @@ namespace Mouse {
 #define PLAYER_HITBOX_ADJ (Rectangle) {15, 10, -57, 0}
 #define COL_ADJUST 0.1f
 #define CAMERA_BOX_ADJ (Rectangle) {0, 0, 0, 0}
+
+#define FONT_SIZE_FOR_NUK 30

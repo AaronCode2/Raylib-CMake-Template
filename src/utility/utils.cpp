@@ -185,6 +185,9 @@ Rectangle Utils::getScreenRect() {
     return {0, 0, (float) GetScreenWidth(), (float) GetScreenHeight()};
 }
 
+Rectangle Utils::THE_DEBUG_RECT = {0, 0, 0, 0};
+Vector2 Utils::THE_DEBUG_VECTOR = {0, 0};
+
 void Utils::debugRect(Rectangle object) {
 
     DrawRectangleRec(object, {255, 0, 0, 100});

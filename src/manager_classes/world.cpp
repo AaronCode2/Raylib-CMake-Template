@@ -13,7 +13,11 @@ void World::update() {
 
 #if DEBUG_ENABLED
 
-    dev_tilePlacer();
+    if(IsKeyPressed(KEY_T))
+        enableTilePlacer = !enableTilePlacer;
+
+    if(enableTilePlacer)
+        dev_tilePlacer();
 
 #endif
 }

@@ -26,6 +26,8 @@ class World {
 
         Rectangle tilePlacerRect;
         TileType pickedTile = TileType::WALL;
+        
+        bool enableTilePlacer = false;
 
         Vector2 worldPos = {0, 0};
 };

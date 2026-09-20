@@ -7,6 +7,10 @@
 #include "utility/textures.hpp"
 #include "manager_classes/world.hpp"
 
+#if DEBUG_ENABLED
+    #include "raylib-nuklear.h"
+#endif
+
 class Game {
 
     public:
@@ -22,6 +26,16 @@ class Game {
 
         World world = World();
         Player player = Player({100, 100, 100, 100}, world.giveTiles());
+
+    // thirdparty lib
+
+    #if DEBUG_ENABLED
+        struct nk_context *nk = InitNuklear(FONT_SIZE_FOR_NUK);
+
+        void updateNK();
+        void drawNK();
+
+    #endif
 
         void gameLoop();
         void updateGame();

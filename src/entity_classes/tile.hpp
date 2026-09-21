@@ -11,6 +11,7 @@ class Tile : public Sprite {
         Tile(Vector2 position, TileType type);
 
         void update();
+        void move(const Vector2 newVelocity);
 
         Rectangle getHitBox() const { return hitBox; };
 

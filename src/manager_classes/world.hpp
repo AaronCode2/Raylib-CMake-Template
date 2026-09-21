@@ -2,6 +2,7 @@
 #include <raylib.h>
 #include <vector>
 #include "../entity_classes/tile.hpp"
+#include <math.h>
 
 class World {
 
@@ -9,13 +10,15 @@ class World {
 
         World();
 
-        void update();
+        void update(const Vector2 playerVelocity, const ShouldCameraMove cameraMovement);
 
         std::vector<Tile> &giveTiles();
 
     private:
 
         void dev_tilePlacer();
+
+        void updateTiles(const Vector2 playerVelocity, const ShouldCameraMove cameraMovement);
 
         std::vector<Tile> tiles;
 

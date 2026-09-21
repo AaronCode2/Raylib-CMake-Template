@@ -27,6 +27,12 @@ struct Input {
 
 Input getInput();
 
+struct ShouldCameraMove {
+
+    bool moveX = false;
+    bool moveY = false;
+};
+
 enum class FPS_TYPE {
 
    THIRTY_FPS = 0, // Can't write nums in enum!
@@ -118,9 +124,9 @@ namespace Mouse {
 #define PLAYER_WALK_FRAME_DURATION 0.09f
 #define PLAYER_WALK_MAX_FRAMES 8
 
-#define PLAYER_SPEED 20000
-#define PLAYER_JUMP_SPEED -60000
-#define GRAVITY 2000
+#define PLAYER_SPEED 500
+#define PLAYER_JUMP_SPEED -2500
+#define GRAVITY 200
 
 // 43, 100
 

@@ -4,12 +4,33 @@ World::World() {
 
 }
 
-void World::update() {
+void World::updateTiles(const Vector2 playerVelocity, const ShouldCameraMove cameraMovement) {
+
+    if(cameraMovement.moveX) {
+
+        for(Tile &tile : tiles) {
+
+            tile.move({roundf(-playerVelocity.x), 0});
+        }
+    }
+
+    if(cameraMovement.moveY) {
+
+        for(Tile &tile : tiles) {
+
+            tile.move({0, roundf(-playerVelocity.y)});
+        }
+    }
 
     for(Tile &tile : tiles) {
 
         tile.update();
-    }
+    }    
+}
+
+void World::update(const Vector2 playerVelocity, const ShouldCameraMove cameraMovement) {
+
+    updateTiles(playerVelocity, cameraMovement);
 
 #if DEBUG_ENABLED
 

@@ -28,17 +28,19 @@ void Player::draw() {
         WHITE
     );
 
-    updateCamera();
 }
 
 void Player::move() {
 
-    
-    object.x += velocity.x * GetFrameTime();
-    collisionX();
+    updateCamera();
 
-    object.y += velocity.y * GetFrameTime();
+    object.x += velocity.x;
+    collisionX();
+    moveCameraX();
+
+    object.y += velocity.y;
     collisionY();
+    moveCameraY();
 }
 
 void Player::handleAnimation() {
@@ -185,14 +187,25 @@ void Player::collisionY() {
 
 void Player::moveCameraX() {
 
+    if((hitBox.x <= cameraBox.x || hitBox.x + hitBox.width >= cameraBox.x + cameraBox.width) && velocity.x != 0) {
+
+        object.x -= velocity.x;
+        shouldCameraMove.moveX = true;
+    }
 }
 
 void Player::moveCameraY() {
 
+    if((hitBox.y <= cameraBox.y || hitBox.y + hitBox.height >= cameraBox.y + cameraBox.height) && velocity.y != 0) {
+
+        object.y -= velocity.y;
+        shouldCameraMove.moveY = true;
+    }
 }
 
-void Player::updateCamera()
-{
+void Player::updateCamera() {
+
+    shouldCameraMove = {false, false};
 
     cameraBox = {
 

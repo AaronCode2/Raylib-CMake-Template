@@ -19,6 +19,16 @@ void Tile::update() {
     updateHitBox();
 }
 
+void Tile::move(const Vector2 newVelocity) {
+
+    velocity = newVelocity;
+
+    object.x += velocity.x;
+    object.y += velocity.y;
+
+    velocity = {0, 0};
+}
+
 void Tile::draw() {
 
     DrawTextureRec(

@@ -15,6 +15,9 @@ class Player : public Sprite {
 
         void update();
 
+        Vector2 getVelocity() const { return velocity; };
+        ShouldCameraMove getCameraMoved() const { return shouldCameraMove; };
+
     private:
 
         void draw();
@@ -36,6 +39,7 @@ class Player : public Sprite {
 
         Dir direction = Dir::RIGHT;
         PlayerAnimState state = PlayerAnimState::IDLE;
+        ShouldCameraMove shouldCameraMove;
 
         std::vector<Tile> &tiles;
 
